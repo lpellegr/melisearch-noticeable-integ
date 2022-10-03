@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import {dialog} from "./Modal";
 
 const config = {
   noticeable: {
@@ -8,6 +9,9 @@ const config = {
 
 const NotificationPopup = () => {
   useEffect(() => {
+    window.noticeable.on('widget:ready', config.noticeable.widget, (e) => {
+      dialog.show();
+    });
     window.noticeable.render('widget', config.noticeable.widget, {
       selector: '#noticeable-widget',
     })

@@ -1,7 +1,9 @@
 import { useDialogState, Dialog, DialogDisclosure } from "reakit/Dialog";
 
+export let dialog;
+
 export default function Modal() {
-  const dialog = useDialogState({visible: true});
+  dialog = useDialogState({visible: true});
   return (
     <>
       <DialogDisclosure {...dialog}>
